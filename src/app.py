@@ -47,10 +47,10 @@ def bid(request: Request):
         "timeRemaining": 1200,
         "cards": ["JS", "TS", "KH", "9C"],      # own cards
         "bidHistory": [ ["A1", 16],             # bidding history in chronological order
-                        ["B1",17],
-                        ["A1", 17],
-                        ["B1", 0],
-                        ["A2", 0],
+                        ["B1",17], 
+                        ["A1", 17], 
+                        ["B1", 0], 
+                        ["A2", 0], 
                         ["B2", 0]
                     ],
         "bidState": {
@@ -61,10 +61,10 @@ def bid(request: Request):
         },
     }
     """
-
+    
     body = request.json
     print(body)
-
+    
     return json(get_bid(body))
 
 
@@ -79,18 +79,18 @@ def choose_trump(request: Request):
         "timeRemaining": 1200,
         "cards": ["JS", "TS", "KH", "9C"],      # own cards
         "bidHistory": [ ["A1", 16],             # bidding history in chronological order
-                        ["B1",17],
-                        ["A1", 17],
-                        ["B1", 0],
-                        ["A2", 0],
+                        ["B1",17], 
+                        ["A1", 17], 
+                        ["B1", 0], 
+                        ["A2", 0], 
                         ["B2", 0]
-                    ],
+                    ], 
     }
     """
-
+    
     body = request.json
     print(body)
-
+    
     return json(get_trump_suit(body))
 
 
@@ -109,21 +109,21 @@ def play(request: Request):
         ],
         "cards": ["JS", "TS", "KH", "9C", "JD", "7D", "8D"],    # own cards
         "bidHistory": [ ["A1", 16],                             # bidding history in chronological order
-                        ["B1",17],
-                        ["A1", 17],
-                        ["B1", 0],
-                        ["A2", 0],
+                        ["B1",17], 
+                        ["A1", 17], 
+                        ["B1", 0], 
+                        ["A2", 0], 
                         ["B2", 0]
                     ],
         "played": ["9S", "1S", "8S"],
         "handsHistory": [
             [
-                "A1", # player who threw the first card ("7H")
+                "A1", # player who threw the first card ("7H") 
                 ["7H", "1H", "8H", "JH"],           # cards that thrown in the first hand
                 "B2" # winner of this hand
             ]
         ],
-
+        
         # represents the suit if available, the trumpSuit is only present for the player who reveals the trump
         # after the trump is revealed, the trumpSuit is present for all the players
         "trumpSuit": false | "H",
@@ -135,10 +135,10 @@ def play(request: Request):
         },
     }
     """
-
+    
     body = request.json
     print(body)
-
+    
     return json(get_play_card(body))
 
 
